@@ -7,7 +7,7 @@ const fetch = require("isomorphic-fetch");
 
 router.get("/:shopid/:itemid/", async (req, res) => {
 
-  const limit = 30;
+  
       fetch(
         `https://shopee.ph/api/v2/item/get_ratings?itemid=${req.params.itemid}&limit=1&offset=0&shopid=${req.params.shopid}&type=0`
       )
