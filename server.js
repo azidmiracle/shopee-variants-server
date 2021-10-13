@@ -12,9 +12,13 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 //--ROUTES --//
-//THIS ROUTES SHOULD MATCH IN THE CLIENT SIDE (AXIOS)
+//THIS ROUTES SHOULD MATCH IN THE CLIENT SIDE
 const shopee_seller_route = require("./routes/shopee_id.route");
-app.use("/", shopee_seller_route);
+app.use("/ratings/", shopee_seller_route);
+
+//THIS ROUTES SHOULD MATCH IN THE CLIENT SIDE (AXIOS)
+const shopee_seller_count_route = require("./routes/shopee_ratingcount.route");
+app.use("/count/", shopee_seller_count_route);
 
 //WHATEVER PORT IS AVAILABLE OF PORT 5000
 const port =process.env.PORT || 5000
